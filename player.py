@@ -62,6 +62,5 @@ def main():
     player.attack()
     player.defend()
 
-if __name__ == '__main__':
-    main()       
+if __name__ == '__main__':    
     main()       
