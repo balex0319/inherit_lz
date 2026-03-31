@@ -40,29 +40,28 @@ class Warrior(Player):
         print(self.level)
 
     def defend(self):
-        df = math.log(self.exp)*armor
+        df = math.log(self.exp)*self.armor
         print('защита')
         print(df)
 
 
 levels = [100, 200, 400, 800, 1600, 3200, 6400, 12800, 25600, 51200]
-input_data = input('Имя игрока, его уровень, количество имеющегося опыта, новый опыт, урон от оружия и защита: ')
-data = input_data.split()
-name = str(data[0])
-level = int(data[1])
-experience = int(data[2])
-add_exp = int(data[3])
-weapon = int(data[4])
-armor = int(data[5])
 
 
 def main():
-        
+    
+    input_data = input('Имя игрока, его уровень, количество имеющегося опыта, новый опыт, урон от оружия и защита: ')
+    data = input_data.split()  
+
+    name = data[0]
+    level, experience, add_exp, weapon, armor = map(int, data[1:])
+
     player = Player(name, level, experience, add_exp)
     player.show_stars()
-    player = Warrior(name,level,experience,add_exp,weapon,armor)
+    player = Warrior(name, level, experience, add_exp, weapon, armor)
     player.attack()
     player.defend()
 
 if __name__ == '__main__':
+    main()       
     main()       
